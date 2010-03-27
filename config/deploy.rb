@@ -33,7 +33,7 @@ set :rails_env, "production"
 # GENERAL SETTINGS
 # -------------------------------------------------------------------
 
-set :application, "medistrano.vpc.com"
+set :application, "cruise.vpc.com"
 
 set :use_sudo, true
 
@@ -85,13 +85,11 @@ set :keep_releases, 10
 
 deploy.task :restart, :roles => :app do
   run "#{latest_release}/cruise stop"
+#  run "sudo chown -R ubuntu:ubuntu /mnt/cruisecontrol"
+#  run "sudo chown -R ubuntu:ubuntu /home/ubuntu/.cruise"
   run "#{latest_release}/cruise start -d"
-  #run "sudo chown -R ubuntu:ubuntu #{latest_release}/tmp"
   nginx.restart
 end
-
-
-
 
 
 
@@ -131,24 +129,6 @@ namespace :nginx do
   
 end
 
-# -------------------------------------------------------------------
-# SETTTINGS
-# -------------------------------------------------------------------
-
-#after "deploy:update_code", "deploy:symlink_config"
-#after "deploy:update_code", "deploy:symlink_db" 
-#
-#namespace :deploy do
-#  desc "Symlink to the right database yaml"
-#  task :symlink_db, :roles => :app do
-#    run "ln -nfs #{release_path}/config/database.yml.production #{release_path}/config/database.yml"
-#  end
-#  desc "Symlink to the production webistrano configuration file" 
-#  task :symlink_config, :roles => :app do
-#    run "sudo mv #{release_path}/config/webistrano_config_production.rb #{release_path}/config/webistrano_config.rb" 
-#  end
-#end
-
 
 # -------------------------------------------------------------------
 # HELPERS
@@ -163,13 +143,13 @@ end
 
 
 # config/deploy.rb
-after "deploy:update_code", "gems:install"
- 
-namespace :gems do
-  desc "Install gems"
-  task :install, :roles => :app do
-    run "cd #{current_release} && #{sudo} rake gems:install RAILS_ENV=#{rails_env} "
-  end
-end
-
-
+#after "deploy:update_code", "gems:install"
+# 
+#namespace :gems do
+#  desc "Install gems"
+#  task :install, :roles => :app do
+#    run "cd #{current_release} && #{sudo} rake gems:install RAILS_ENV=#{rails_env} "
+#  end
+#end
+#
+#

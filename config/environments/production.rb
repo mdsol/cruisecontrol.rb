@@ -23,3 +23,4 @@ config.after_initialize do
   require RAILS_ROOT + '/config/dashboard_initialize' 
   BuilderStarter.start_builders 
 end
+
