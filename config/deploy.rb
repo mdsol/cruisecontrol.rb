@@ -88,8 +88,6 @@ deploy.task :restart, :roles => :app do
   run "#{latest_release}/cruise start -d"
   #run "sudo chown -R ubuntu:ubuntu #{latest_release}/tmp"
   nginx.restart
-  
-  #run "touch #{current_path}/tmp/restart.txt"
 end
 
 
