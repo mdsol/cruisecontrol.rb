@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>CruiseControl.rb</title>
+  <meta name="description" content="Lightweight continuous integration tool" />
+  <meta name="keywords"
+        content="continuous integration, cruisecontrol, ruby, rails, build, deployment, software, development, agile" />
+  <link href="/thoughtworks_studios/reset.css?1269631616" media="all" rel="stylesheet" type="text/css" />
+  <link href="/thoughtworks_studios/fonts.css?1269631616" media="all" rel="stylesheet" type="text/css" />
+  <link href="/thoughtworks_studios/grids.css?1269631616" media="all" rel="stylesheet" type="text/css" />
+  <link href="/thoughtworks_studios/base.css?1269631616" media="all" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/documentation.css?1269631616" media="all" rel="stylesheet" type="text/css" />
+  <script src="/thoughtworks_studios/page.js?1269631616" type="text/javascript"></script>
+  <script src="/javascripts/prototype.js?1269631616" type="text/javascript"></script>
+<script src="/javascripts/effects.js?1269631616" type="text/javascript"></script>
+<script src="/javascripts/dragdrop.js?1269631616" type="text/javascript"></script>
+<script src="/javascripts/controls.js?1269631616" type="text/javascript"></script>
+<script src="/javascripts/application.js?1269631616" type="text/javascript"></script>
+</head>
+<body>
+	<div id="doc" class="yui-t4">
+    <div id="hd" class="clearfix">
+  <a href="/" id="home-image-link"><img alt="Cruise_logo_large" src="/images/cruise_logo_large.png?1269631616" /></a>
+
+	<div id="top-nav-wrapper">
+		<div id="top-nav">
+		  <a href="http://opensource.thoughtworks.com/" id="tw_image_link"><img alt="Tw_open_source_small" src="/images/tw_open_source_small.png?1269631616" /></a>
+		  <a href="/documentation/">Main</a> |
+		  <a href="http://rubyforge.org/frs/?group_id=2918">Download</a> |
+		  <a href="/documentation/docs">Docs</a> |
+		  <a href="/documentation/contributing">Contributing</a> |
+		  <a href="/documentation/license">License</a> |
+		  <a href="/documentation/team">The Team</a>
+		</div>				
+	</div>
+	<hr>
+</div>
+
+
+		<div id="bd" class="thick">
+		  <div class="yui-b" id="side-bar">
+		    <div class="inner">
+          <div class="box">
+
+	<h2>Live demo</h2>
+
+
+	<p><a href="http://cruisecontrolrb.thoughtworks.com/projects">
+  <img style="border:1px solid #687176;" src="../images/ccrb_mini.png" alt="CruiseControl.rb mini link to demo" />
+</a></p>
+
+
+	<p>Take a look at a <a href="http://cruisecontrolrb.thoughtworks.com/projects">working demo</a> of CruiseControl.rb.
+It&#8217;s pretty sweet.</p>
+
+
+</div>
+<div class="box">
+
+	<h2>Quick links</h2>
+
+
+	<ul>
+	<li><a href="http://rubyforge.org/frs/?group_id=2918">Download</a></li>
+		<li><a href="/documentation/screencasts">Watch 5 min install</a></li>
+		<li><a href="https://cruisecontrolrb.lighthouseapp.com">Report a Bug</a></li>
+		<li><a href="https://cruisecontrolrb.lighthouseapp.com">Request a Feature</a></li>
+		<li><a href="http://rubyforge.org/mailman/listinfo/cruisecontrolrb-users">Users mailing list</a></li>
+		<li><a href="/documentation/contributing">How to contribute</a></li>
+		<li><a href="http://github.com/thoughtworks/cruisecontrol.rb">Source</a></li>
+	</ul>
+
+
+</div>
+<div class="box">
+
+	<h2>Friends of CC.rb</h2>
+
+
+	<p><a href="http://studios.thoughtworks.com/"><img src="images/mingle_v_v_small.gif"></a></p>
+
+
+</div>
+		    </div>
+      </div>
+
+		  <div id="yui-main">
+		    <div class="yui-b">
+		      <div class="inner">
+		        
+
+<div id="main_image">
+  <div id="download_button"><a href="http://rubyforge.org/frs/?group_id=2918"><img alt="Download_now_orange" src="/images/download_now_orange.png?1269631616" /></a></div>
+</div>
+
+<div class="section">
+    
+  <div class="blog summary content">
+    <div class="body">
+      <p>
+        CruiseControl.rb is a
+        <a href="http://www.martinfowler.com/articles/continuousIntegration.html">continuous integration</a>
+        tool. Its basic purpose in life is to alert members of a software project when one of them checks
+        something into source control that breaks the build.
+      </p>
+      <p>
+        CC.rb is easy to install, pleasant to use and simple to hack. It's written in
+        <a href="http://ruby-lang.org">Ruby</a>.
+      </p>
+    </div>
+  </div>
+
+  <div class="blog summary content">
+      <h3 class="title">Get started</h3>
+      <div class="body">
+        <table>
+          <tr>
+
+            <td class="instruction_detail">
+              <div class="large_number">1</div>
+              <div class="instruction_text">
+                <div class="install_step_title">Download</div>
+                Believe it or not, you have to download CruiseControl.rb in order to use it.<br/>
+                <a href="http://rubyforge.org/frs/?group_id=2918">Download it now</a>
+              </div>
+            </td>
+            <td class="instruction_detail">
+              <div class="large_number">2</div>
+              <div class="instruction_text">
+                <div class="install_step_title">Add Your Project</div>
+                <code class="steps">cruise add &lt;name&gt; -u &lt;url&gt;</code>
+                You can <a href="/documentation/screencasts">watch us</a> setup a typical rails project, or read
+                more on the <a href="/documentation/getting_started">getting started</a> page.
+              </div>
+            </td>
+            <td class="instruction_detail_final">
+              <div class="large_number">3</div>
+              <div class="instruction_text">
+                <div class="install_step_title">Start Cruise</div>
+                <code class="steps">cruise start</code>
+                That's it! If you have any issues, 
+                read the <a href="/documentation/docs">docs</a> or <a href="http://rubyforge.org/mailman/listinfo/cruisecontrolrb-users">ask us</a>.
+              </div>
+            </td>
+          </tr>
+        </table>
+    </div>
+  </div>
+
+  <div class="blog summary content">
+    <h3 class="title">About ThoughtWorks</h3>
+    <div class="body">
+      Learn more about ThoughtWorks at
+      <a class="read-more" href="http://www.thoughtworks.com/select-country.html">ThoughtWorks.com</a>
+    </div>
+  </div>
+
+</div>
+
+		      </div>
+		    </div>
+		  </div>
+    </div>
+
+    <div id="ft">
+	<div class="links">
+	  <a href="/documentation/contact_us">Contact Us</a> | 
+	  <a href="http://www.thoughtworks.com" target="_blank">ThoughtWorks.com</a> |
+	  <a href="http://studios.thoughtworks.com" target="_blank">ThoughtWorks Studios</a>	
+	</div>
+	<div class="copyright">
+    Version 1.4.0 | 
+		&copy; ThoughtWorks Copyright 2009
+	</div>
+</div>
+
+  </div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-9566218-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

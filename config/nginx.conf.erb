@@ -1,0 +1,17 @@
+server {
+
+  listen          80;
+  server_name     cruise.vpc.com;
+
+  access_log /mnt/cruisecontrol/shared/log/nginx.access.log;
+  error_log /mnt/cruisecontrol/shared/log/nginx.error.log;
+
+  location / {
+    proxy_pass http://localhost:3333;
+  }
+
+
+}
+
+
+
