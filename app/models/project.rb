@@ -258,6 +258,10 @@ class Project
   def last_five_builds
     last_builds(5)
   end
+
+  def last_twenty_builds
+    last_builds(20)
+  end
   
   def last_builds(n)
     result = builds.reverse[0..(n-1)]

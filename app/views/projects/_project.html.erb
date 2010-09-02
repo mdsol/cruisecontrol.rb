@@ -1,32 +1,21 @@
+    <fieldset class="fieldset" style='margin-right:80px; margin-left:80px'>
+      <legend><span class="project_name"> <%= link_to project.name, :action => 'show', :id => project.name %></span></legend>
+
 <div id="project_<%= project.name %>" class="project build_<%= project.last_complete_build_status %>">
 <table class="project_pane">
-<tr>
-
-  <td class="project_summary">
-
-    <div>
-      <span class="project_name">
-        <%= link_to project.name, :action => 'show', :id => project.name %>
-      </span>
-    </div>
-
+ <tr>
+  <td width="40%">
     <div class="recent_builds">
 
-      <% recent_builds = project.last_five_builds %>
-
-      <span class="lead">
-        <%= recent_builds.first ? 'build ' : '<span class="build_status">Never built</span>' %>
-        <br/>
-        <%= link_to image_tag('rss_light.gif'), :action => 'show', :id => project.name, :format => 'rss' %>
-      </span>
+      <% recent_builds = project.last_twenty_builds %>
 
       <% unless recent_builds.empty? %>
         <div class="builds_list">
           <% recent_builds.each do |build| %>
             <% if build == recent_builds.first %>
-                <div class="build_summary"><%= link_to_build_with_elapsed_time(project, build) %></div>
+                <div class="build_summary" style="margin:4px"><%= link_to_build_with_elapsed_time(project, build) %></div>
             <% else %>
-                <div class="build_summary"><%= link_to_build(project, build) %></div>
+                <div class="build_summary" style="margin:4px"><%= link_to_build(project, build) %></div>
             <% end %>
           <% end %>
         </div>
@@ -34,8 +23,8 @@
     </div>
   </td>
 
-  <td class="builder_control">
-    <div class="buttons">
+  <td width="20%">
+    <div >
       <% form_remote_tag(
              :url => { :action => 'build', :id => project },
              :before => "$('build_#{project.to_param}').disabled = true; " +
@@ -43,11 +32,11 @@
                         "Element.update('build_#{project.to_param}', 'Wait...')"
            ) do %>
         <div>
-          <button 
+          <button style="padding:16px; font-size:33px;" 
               <% if Configuration.disable_build_now -%>
                 onclick="alert('Build Now button is disabled on this site.'); return false;"
               <% end -%>
-                id="build_<%= project.to_param %>" type="submit" class="build_button" value="txt" title="Build Now">
+                id="build_<%= project.to_param %>" type="submit"  value="txt" title="Build Now">
             <% if project.builder_state_and_activity == 'builder_down' %>
               Start Builder
             <% else %>
@@ -60,7 +49,7 @@
     <%= display_builder_state(project.builder_state_and_activity) %>
   </td>
 
-  <td class="build_details">
+  <td width="40%">
     <% latest_build = recent_builds.first %>
     <% if latest_build %>
       <% if latest_build.incomplete? %>
@@ -80,3 +69,5 @@
 </tr>
 </table>
 </div>
+
+</fieldset>
