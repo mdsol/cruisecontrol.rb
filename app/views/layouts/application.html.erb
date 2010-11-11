@@ -44,25 +44,27 @@
   <div id="app_top">
   <div id="header">
     
-    <div id="header_top_menu">
+     <div id="header_top_menu">
       <div id="container_left_menu" class="topNav" >
-        <a href="http://medistrano.imedidata.net" onMouseout="HideTipTop('phantomline_medistrano'); return true;" onMouseover="ShowTipTop('phantomline_medistrano'); return true;">Medistrano</a>
+        <%= link_to "Medistrano", "http://medistrano.imedidata.net", :onMouseover => "ShowTipTop('phantomline_medistrano'); return true;", :onMouseout => "HideTipTop('phantomline_medistrano'); return true;" %>
         <div id="phantomline_medistrano" class="tiptop">Deployment Interface</div>
         &nbsp;/&nbsp;
-        <a href="http://cruise.imedidata.net" onMouseout="HideTipTop('phantomline_cruise'); return true;" onMouseover="ShowTipTop('phantomline_cruise'); return true;">CruiseControl</a>
-        <div id="phantomline_cruise" class="tiptop">Continous Integration</div>
+        <%= link_to 'Chef-Server', "https://manage.opscode.com", :onMouseover => "ShowTipTop('phantomline_chefserver'); return true;", :onMouseout => "HideTipTop('phantomline_chefserver'); return true;" %>
+        <div id="phantomline_chefserver" class="tiptop">Node Configuration</div>
         &nbsp;/&nbsp;
-        <a href="http://columbo.imedidata.net" onMouseout="HideTipTop('phantomline_columbo'); return true;" onMouseover="ShowTipTop('phantomline_columbo'); return true;">Columbo</a>
-        <div id="phantomline_columbo" class="tiptop">Validation Portal</div>        
+        <%= link_to 'CruiseControl', "http://cruise.imedidata.net", :onMouseover => "ShowTipTop('phantomline_cruise'); return true;", :onMouseout => "HideTipTop('phantomline_cruise'); return true;" %>
+        <div id="phantomline_cruise" class="tiptop">Continuous Integration</div>
+        &nbsp;/&nbsp;
+        <%= link_to 'Columbo', "http://columbo.imedidata.net", :onMouseover => "ShowTipTop('phantomline_columbo'); return true;", :onMouseout => "HideTipTop('phantomline_columbo'); return true;" %>
+        <div id="phantomline_columbo" class="tiptop">Validation Portal</div>
       </div>
-      <div id="container_right_menu" class="topNav">
-        
-      </div>		
+      
+      
       <div class="topLogo">
-        <img alt="Medidata_logo_top" height="59" src="http://medistrano.imedidata.net/images/MEDIDATA_LOGO_TOP.png?1272304423" width="242" />
+        <%= image_tag('http://medistrano.imedidata.net/images/MEDIDATA_LOGO_TOP.png', :width => '242', :height => '59') %>
       </div>
+    </div>
 
-    </div>  
 
   </div>
     <div id="main_content">
