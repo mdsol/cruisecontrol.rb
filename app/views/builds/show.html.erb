@@ -3,7 +3,9 @@
 <% @rss_feeds = {"#{@project.name} builds" => {:controller => 'projects', :action => 'show', :id => @project, :format => 'rss'}} -%>
 
 <div id="builds_list">
-  <div id="navigate_build">
+  <div > <a href="/"> &lt;&lt; Project Home </a> </div>
+  <br /><br /><br />
+  <!--<div id="navigate_build">
     <% prev_build, next_build = @project.previous_build(@build), @project.next_build(@build)%>
     
     <%= link_to_unless !prev_build, '&lt; prev', 
@@ -13,7 +15,7 @@
                        {:project => @project, :build => next_build}, :accesskey => 'j' %>
     <%= link_to_unless !next_build, 'latest &gt;&gt;', :project => @project.name %>
   </div>
-  
+  -->
   <% @builds_for_navigation_list.each do |build| %>
     <div class="build_link<%= ' selected' if @build.label == build.label %>">
       <%= link_to_build(@project, build) %>
