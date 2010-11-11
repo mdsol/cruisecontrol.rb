@@ -1,3 +1,5 @@
+<fieldset class="fieldset" style='margin-right:80px; margin-left:80px'>
+
 <% @rss_feeds = {"#{@project.name} builds" => {:controller => 'projects', :action => 'show', :id => @project, :format => 'rss'}} -%>
 
 <div id="builds_list">
@@ -52,11 +54,14 @@
     <% if @build.failed? %><span class="error">FAILED</span><% end %>
     <% if @build.incomplete? %> (INCOMPLETE)<% end %>    
   </h1>
+  
+  <br/><br/><br/>
+  
   <div class="build_time">
     <%= display_build_time %>
   </div>
 
-  <br/>
+  <br/><br/>
 
   <div class="section_open">
     <div class="section_header" onclick="toggle_section(this.parentNode)">Build Changeset</div>
@@ -98,4 +103,4 @@
 
 
 </div>
-
+</fieldset>
