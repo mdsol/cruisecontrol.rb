@@ -43,23 +43,20 @@
 <body>
   <div id="app_top">
   <div id="header">
-    
      <div id="header_top_menu">
       <div id="container_left_menu" class="topNav" >
         <%= link_to "Medistrano", "http://medistrano.imedidata.net", :onMouseover => "ShowTipTop('phantomline_medistrano'); return true;", :onMouseout => "HideTipTop('phantomline_medistrano'); return true;" %>
         <div id="phantomline_medistrano" class="tiptop">Deployment Interface</div>
         &nbsp;/&nbsp;
-        <%= link_to 'Chef-Server', "https://manage.opscode.com", :onMouseover => "ShowTipTop('phantomline_chefserver'); return true;", :onMouseout => "HideTipTop('phantomline_chefserver'); return true;" %>
-        <div id="phantomline_chefserver" class="tiptop">Node Configuration</div>
-        &nbsp;/&nbsp;
-        <%= link_to 'CruiseControl', "http://cruise.imedidata.net", :onMouseover => "ShowTipTop('phantomline_cruise'); return true;", :onMouseout => "HideTipTop('phantomline_cruise'); return true;" %>
-        <div id="phantomline_cruise" class="tiptop">Continuous Integration</div>
-        &nbsp;/&nbsp;
         <%= link_to 'Columbo', "http://columbo.imedidata.net", :onMouseover => "ShowTipTop('phantomline_columbo'); return true;", :onMouseout => "HideTipTop('phantomline_columbo'); return true;" %>
         <div id="phantomline_columbo" class="tiptop">Validation Portal</div>
+         &nbsp;/&nbsp;
+        <%= link_to 'Cruise/Hendriks', "/cruise", :onMouseover => "ShowTipTop('phantomline_cruise'); return true;", :onMouseout => "HideTipTop('phantomline_cruise'); return true;" %>
+        <div id="phantomline_cruise" class="tiptop">Continuous Integration</div> 
+        &nbsp;/&nbsp;
+        <%= link_to 'Chef-Server', "https://manage.opscode.com", :onMouseover => "ShowTipTop('phantomline_chefserver'); return true;", :onMouseout => "HideTipTop('phantomline_chefserver'); return true;" %>
+        <div id="phantomline_chefserver" class="tiptop">Node Configuration</div>
       </div>
-      
-      
       <div class="topLogo">
         <%= image_tag('http://medistrano.imedidata.net/images/MEDIDATA_LOGO_TOP.png', :width => '242', :height => '59') %>
       </div>
