@@ -144,7 +144,6 @@ a.never_built, a.never_built:visited {
 }
 
 .log {
-  overflow: auto;
 }
 
 .test-results {
