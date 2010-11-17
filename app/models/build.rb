@@ -147,13 +147,13 @@ EOF
   def contents_for_display(file)
     return '' unless File.file?(file) && File.readable?(file)
     file_size_kbytes = File.size(file) / 1024
-    if file_size_kbytes < 100
+    #if file_size_kbytes < 100
       File.read(file)
-    else
-      contents = File.read(file, 100 * 1024)
-      response = "#{file} is #{file_size_kbytes} kbytes - too big to display in the dashboard, the output is truncated\n\n\n"
-      response += contents
-    end
+    #else
+    #  contents = File.read(file, 100 * 1024)
+    #  response = "#{file} is #{file_size_kbytes} kbytes - too big to display in the dashboard, the output is truncated\n\n\n"
+    #  response += contents
+    #end
   end
 
   def command
