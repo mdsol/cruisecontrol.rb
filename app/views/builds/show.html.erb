@@ -3,7 +3,7 @@
 <% @rss_feeds = {"#{@project.name} builds" => {:controller => 'projects', :action => 'show', :id => @project, :format => 'rss'}} -%>
 
 <div id="builds_list">
-  <div > <a href="/"> &lt;&lt; Project Home </a> </div>
+  <div > <a href="/"> &lt;&lt; Back to Project </a> </div>
   <br /><br /><br />
   <!--<div id="navigate_build">
     <% prev_build, next_build = @project.previous_build(@build), @project.next_build(@build)%>
@@ -51,11 +51,11 @@
 <br />
 
 <div id="build_details">
-  <h1>
+  <h3>
     <%= h @project.name %> build <%= h @build.abbreviated_label %>
     <% if @build.failed? %><span class="error">FAILED</span><% end %>
     <% if @build.incomplete? %> (INCOMPLETE)<% end %>    
-  </h1>
+  </h3>
   
   <br/><br/><br/>
   
