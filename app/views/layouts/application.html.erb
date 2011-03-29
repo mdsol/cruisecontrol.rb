@@ -37,9 +37,7 @@
         <%= link_to 'Chef-Server', "https://manage.opscode.com" %>
       </div>
       <div id="container_right_menu" class="topNav">
-        <% if logged_in? %>
-          Loggedin as <%= link_to current_user.login, user_path(current_user) %> <font color=red><% if current_user.superadmin? %>(s)<% end %><% if current_user.admin? %>(a)<% end %><% if current_user.productionadmin? %>(p)<% end %></font>&nbsp;/&nbsp;<%= link_to 'Logout', logout_path %>
-        <% end %>
+        
       </div>
       <div class="topLogo">
         <%= image_tag('MEDISTRANO_LOGO_TOP.png', :width => '242', :height => '59') %>
