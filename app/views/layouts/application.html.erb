@@ -18,24 +18,7 @@
   <%= javascript_include_tag :defaults %>
   
   <link href="/stylesheets/cruisecontrol.css" media="all" rel="stylesheet" type="text/css" />
-  
-        
-       
- <script type="text/javascript">
- 
-   function show_effective_config(){
-     $('h_e_c').show();
-     $('s_e_c').hide();
-     $('effective_config').show();
-   }
     
-   function hide_effective_config(){
-      $('h_e_c').hide();
-      $('s_e_c').show();
-      $('effective_config').hide();
-    }
- </script>
-  
 
 </head>
 
@@ -45,16 +28,16 @@
   <div id="header">
      <div id="header_top_menu">
       <div id="container_left_menu" class="topNav" >
-        <%= link_to "Medistrano", "http://medistrano.imedidata.net", :onMouseover => "ShowTipTop('phantomline_medistrano'); return true;", :onMouseout => "HideTipTop('phantomline_medistrano'); return true;" %>
+        <%= link_to "Medistrano", "http://medistrano.imedidata.net" %>
         <div id="phantomline_medistrano" class="tiptop">Deployment Interface</div>
         &nbsp;/&nbsp;
-        <%= link_to 'Columbo', "http://columbo.imedidata.net", :onMouseover => "ShowTipTop('phantomline_columbo'); return true;", :onMouseout => "HideTipTop('phantomline_columbo'); return true;" %>
+        <%= link_to 'Columbo', "http://columbo.imedidata.net" %>
         <div id="phantomline_columbo" class="tiptop">Validation Portal</div>
          &nbsp;/&nbsp;
-        <%= link_to 'Cruise/Hendricks', "http://medistrano.imedidata.net/cruise", :onMouseover => "ShowTipTop('phantomline_cruise'); return true;", :onMouseout => "HideTipTop('phantomline_cruise'); return true;" %>
+        <%= link_to 'Cruise/Hendricks', "http://medistrano.imedidata.net/cruise" %>
         <div id="phantomline_cruise" class="tiptop">Continuous Integration</div> 
         &nbsp;/&nbsp;
-        <%= link_to 'Chef-Server', "https://manage.opscode.com", :onMouseover => "ShowTipTop('phantomline_chefserver'); return true;", :onMouseout => "HideTipTop('phantomline_chefserver'); return true;" %>
+        <%= link_to 'Chef-Server', "https://manage.opscode.com" %>
         <div id="phantomline_chefserver" class="tiptop">Node Configuration</div>
       </div>
       <div class="topLogo">
